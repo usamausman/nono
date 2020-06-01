@@ -8,6 +8,9 @@
 
 * CMake 3.1+
 * Support for C++ 11
+* `ncurses`
+
+You can install `ncurses` from your favourite package manager (`apt`, `yum`, `brew`, etc.)
 
 ## Building
 
@@ -33,12 +36,12 @@ n by n grid of cells, where 0 is empty and 1 is filled
 
 ## Instructions
 
-- Arrow keys or <kbd>WASD</kbd> - move around the board
-- <kbd>Z</kbd> - fill the current cell
-- <kbd>X</kbd> - cross out the current cell
-- <kbd>C</kbd> - clear the current cell
-- Note: Holding <kbd>Shift</kbd> will repeat the previous action
-- <kbd>Q</kbd> - quit
+* Arrow keys or <kbd>WASD</kbd> - move around the board
+* <kbd>Z</kbd> - fill the current cell
+* <kbd>X</kbd> - cross out the current cell
+* <kbd>C</kbd> - clear the current cell
+* Note: Holding <kbd>Shift</kbd> will repeat the previous action
+* <kbd>Q</kbd> - quit
 
 ## TODO
 
