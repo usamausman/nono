@@ -36,6 +36,7 @@ n by n grid of cells, where 0 is empty and 1 is filled
 - Arrow keys or <kbd>WASD</kbd> - move around the board
 - <kbd>Z</kbd> - fill the current cell
 - <kbd>X</kbd> - cross out the current cell
+- <kbd>C</kbd> - clear the current cell
 - Note: Holding <kbd>Shift</kbd> will repeat the previous action
 - <kbd>Q</kbd> - quit
 
