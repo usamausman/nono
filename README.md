@@ -2,7 +2,7 @@
 
 ## What is this?
 
-`nono` is a implementation of [nonogram puzzles](https://en.wikipedia.org/wiki/Nonogram) which can be played in a terminal window
+`nono` is a command-line implementation of [nonogram puzzles](https://en.wikipedia.org/wiki/Nonogram)
 
 ## Requirements
 
