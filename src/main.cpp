@@ -133,13 +133,18 @@ class Grid : public Board {
   Grid(Board &s) : Board(s.size()), solution(s) {
     count(s);
 
-    grid_ =
-        newwin(size_ + 2, size_ * space_ + 1, max_in_col, 2 * max_in_row + 1);
-    rows_ = newwin(size_ + 2, 2 * max_in_row + 2, max_in_col, 0);
-    columns_ =
-        newwin(max_in_col + 2, size_ * space_ + 1, 0, 2 * max_in_row + 1);
+    grid_ = newwin(size_ + 2, size_ * space_ + 1,  //
+                   max_in_col, 2 * max_in_row + 1);
 
-    keypad(grid_, true);
+    // counts on left
+    rows_ = newwin(size_ + 2, 2 * max_in_row + 2,  //
+                   max_in_col, 0);
+
+    // counts on top
+    columns_ = newwin(max_in_col + 2, size_ * space_ + 1,  //
+                      0, 2 * max_in_row + 1);
+
+    keypad(grid_, true);  // capture arrow keys
 
     for (int n = 0; n < size_; n++) {
       checkCompleted(n, 0);
@@ -437,7 +442,7 @@ int main(int argc, char **argv) {
 
   for (int r = 0; r < size; r++) {
     for (int c = 0; c < size; c++) {
-      puzzles >> n;
+      puzzles >> n;  // read single character
       s = n - '0';
 
       if (s == 0) {
@@ -445,7 +450,7 @@ int main(int argc, char **argv) {
       } else if (s == 1) {
         solution.set(r, c, FILLED);
       } else {
-        std::cerr << "Puzzle '" << name << "' has an invalid bit - " << n
+        std::cerr << "Puzzle '" << name << "' has an invalid character - " << n
                   << std::endl;
         exit(-1);
       }
@@ -469,7 +474,7 @@ int main(int argc, char **argv) {
   move(0, 0);
   printw("%s", name);
 
-  // add redrawing with new window size??
+  // add redrawing with new window size?
 
   move(height - 2, 0);
   printw("Fill - %c, Cross Out - %c, Quit - %c", K_FILL, K_CROSS, K_QUIT);
