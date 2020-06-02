@@ -12,9 +12,7 @@ const char *DebugAction[] = {"NONE", "FILLING", "CROSSING", "EMPTYING_FILL",
                              "EMPTYING_CROSS"};
 
 enum State { EMPTY, FILLED, CROSSED };
-// const char *DebugState[] = {"EMPTY", "FILLED", "CROSSED"};
-const char *show[] = {" ", "O", "✕"};
-// const char *show[] = {" ", "█", "."};
+const char *show[] = {" ", "█", "✕"};  // can also use O and .
 
 enum Key {
   K_QUIT = 'q',
@@ -488,10 +486,6 @@ int main(int argc, char **argv) {
 
     board.update(handle(ch));
 
-    // move(height - 4, 0);
-    // clrtoeol();
-    // printw("%3d %3d %d %s", previous.r, previous.c, previous.repeating,
-    //        DebugAction[previous.action]);
     move(height - 3, 0);
     printw("Solved: %d", board.solved());
 
