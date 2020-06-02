@@ -323,9 +323,9 @@ class Grid : public Board {
     wrefresh(rows_);
     wrefresh(columns_);
     wrefresh(grid_);
-  }
 
-  void highlight() {
+    // highlighting
+
     int r_ = previous_.r;
     int c_ = previous_.c;
 
@@ -479,7 +479,6 @@ int main(int argc, char **argv) {
   printw("Hold Shift to repeat last action");
 
   board.draw();
-  board.highlight();
 
   int ch;
   while ((ch = board.input())) {
@@ -497,7 +496,6 @@ int main(int argc, char **argv) {
     printw("Solved: %d", board.solved());
 
     board.draw();
-    board.highlight();
   }
 
   endwin();
