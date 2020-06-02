@@ -144,8 +144,8 @@ class Grid : public Board {
     keypad(grid_, true);
 
     for (int n = 0; n < size_; n++) {
-      markCompleted(n, 0);
-      markCompleted(0, n);
+      checkCompleted(n, 0);
+      checkCompleted(0, n);
     }
 
     previous_ = {0, 0, NONE, false};
@@ -153,7 +153,7 @@ class Grid : public Board {
 
   inline int input() { return wgetch(grid_); }
 
-  void markCompleted(int r_, int c_) {
+  void checkCompleted(int r_, int c_) {
     std::vector<int> cur_row;
     std::vector<int> cur_col;
 
@@ -289,7 +289,7 @@ class Grid : public Board {
 
     // if we are filling and not emptying
     if (action == FILLING && state != EMPTY) {
-      markCompleted(r, c);
+      checkCompleted(r, c);
     }
 
     previous_ = {r, c, action, repeating};
