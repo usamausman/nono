@@ -6,7 +6,10 @@ set(CMAKE_CXX_STANDARD 17)
 file(GLOB SRC src/*.cpp)
 file(GLOB HDR src/*.hpp)
 
-find_package(curses REQUIRED)
+set(CURSES_NEED_NCURSES TRUE)
+set(CURSES_NEED_WIDE TRUE)
+
+find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIR})
 
 add_executable(nono ${SRC} ${HDR})
